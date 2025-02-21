@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotdog Page</title>
+</head>
+<body>
+    <h1>Joe's Hotdog Stand</h1>
+    <p id = "numdogs"> </p>
+    <p id = "numfries"></p>
+    <p id = "numdrinks"> </p>
+    <p id = "totalcost"> </p>
+    <p id = "discount"></p>
+    <p id = "new_cost"> </p>
+    <p id = "tax"> </p>
+    <p id = "final_total"></p>
+    <p> Have a great day! </p>
+    <script type="text/javascript">
+        function showMoney(total){
+            return Math.round(total * 100) / 100;
+        }
+        const hotdog_price = 4.99;
+        const frenchfry_price = 3.99;
+        const drink_price = 1.79;
+        var numdogs = parseInt(prompt("How many hot dogs do you want", "0")) || 0;
+        var numfries = parseInt(prompt("How many french fries do you want", "0")) || 0;
+        var numdrinks = parseInt(prompt("How many drinks do you want", "0")) || 0;
+        var totalcost = numdogs * hotdog_price + numfries * frenchfry_price + numdrinks * drink_price;
+        var discount = 0;
+        document.getElementById("numdogs").textContent = "The total cost of hotdogs is $" + showMoney(numdogs * hotdog_price) + " for " + numdogs;
+        document.getElementById("numfries").textContent = "The total cost of fries is $" + showMoney(numfries * frenchfry_price) + " for " + numfries;
+        document.getElementById("numdrinks").textContent = "The total cost of drinks is $" + showMoney(numdrinks * drink_price) + " for " + numdrinks;
+        document.getElementById("totalcost").textContent = "The total cost before any changes is $" + showMoney(totalcost);
+        if(totalcost >= 30){
+            discount = totalcost / 10;
+        }
+        document.getElementById("discount").textContent = "Total saved is $" + showMoney(discount);
+        var new_cost = totalcost-discount;
+        document.getElementById("new_cost").textContent = "New cost would be $" + showMoney(new_cost);
+        var tax = showMoney((totalcost - discount) * 0.065);
+        document.getElementById("tax").textContent = "The tax will be $" + tax;
+        var final_total = showMoney((totalcost - discount) + tax);
+        document.getElementById("final_total").textContent = "Your total will be $" + final_total;
+        
+    </script>
+</body>
+</html>
