@@ -201,3 +201,175 @@ label{
     opacity: 1;
     max-height: 100px;
 }
+
+@media screen and (max-width: 768px){
+    body{
+        text-align: center;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+
+    p{
+        font-size: 16px;
+    }
+
+    main{
+        padding: 10px;
+    }
+
+    section{
+        margin-bottom: 10px;
+
+    }
+
+    header{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo{
+        width: 50px;
+        margin-bottom: 5px;
+    }
+
+    nav{
+        padding: 8px;
+    }
+
+    nav ul{
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+    }
+
+    nav ul li{
+        margin: 5px;
+        display: block;
+    }
+
+    .overview{
+        width: 90%;
+        padding: 15px;
+    }
+
+    .branches{
+        max-width: 100%;
+        height: auto;
+    }
+
+    .fare-calculator{
+        width: 90%;
+        padding: 15px;
+    }
+
+    #riderType{
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .fareButton{
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    #fareResult{
+        font-size: 18px;
+    }
+
+    footer{
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    body{
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    header{
+        flex-direction: column;
+        padding: 8px;
+    }
+
+    .logo{
+        width: 40px;
+        margin-bottom: 5px;
+    }
+
+    h1{
+        font-size: 24px;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+
+    p{
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    nav{
+        padding: 5px;
+    }
+
+    nav ul li{
+        margin: 3px;
+        display: block;
+    }
+
+    nav ul li a{
+        font-size: 16px;
+        padding: 8px;
+        width: 100%;
+        display: block;
+    }
+
+    .overview{
+        width: 95%;
+        padding: 12px;
+        transition: none;
+    }
+
+    .overview:hover{
+        transform: none;
+    }
+
+    .overview p{
+        opacity: 1;
+        max-height: none;
+    }
+
+    .fare-calculator{
+        width: 95%;
+        padding: 10px;
+    }
+
+    #riderType{
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .fareButton{
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    #fareResult{
+        font-size: 16px;
+    }
+
+    footer{
+        padding: 5px;
+        font-size: 12px;
+    }
+}
