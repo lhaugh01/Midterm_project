@@ -1,0 +1,203 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkgreen;
+    background-image: url("midtermProj/rfr-mbta-greenline-03.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+body, html{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+h1{
+    font-size: 35px;
+    padding: -1px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+.logo{
+    width: 60px;
+    height: auto;
+}
+
+nav {
+    background-color: #006400;
+    padding: 3px;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li{
+    display: inline;
+    margin: 10px;
+       
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+    /* background-color: rgba(255, 255, 255, 0.2); */
+}
+
+main{
+    padding: 20px;
+    flex: 2;
+}
+
+section{
+    margin-bottom: 20px;
+}
+
+.backgroundImg{
+    width: 80%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.branches{
+    
+    max-height: 350px;
+    object-fit: fill;
+    
+}
+footer{
+    background-color: #004d00;
+    color: white;
+    padding: 10px;
+    margin-bottom: 3px;
+    text-align: center;
+    margin-top: auto;
+}
+
+a{
+    color: white;
+}
+
+label{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.fare-calculator{
+    text-align: center;
+    /* background: rgba(0, 50, 0, 0.8); */
+    padding: 20px;
+    border-radius: 10px;
+    width: 50;
+    margin: 20px auto;
+    color: white;
+    font-size: 20px;
+}
+
+#riderType{
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.fareButton{
+    background-color: #228B22;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fareButton:hover{
+    background-color: #32cd32;
+    transform: scale(1.1);  
+}
+
+#fareResult{
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.overview{
+    width: 50%;
+    margin: 20px auto;
+    /* background: rgba(34, 139, 34, 0.8); */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.overview p{
+    line-height: 30px;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.overview:hover{
+    transform: translateX(-10px);
+}
+
+.overview:hover p{
+    opacity: 1;
+    max-height: 100px;
+}

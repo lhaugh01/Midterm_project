@@ -1,48 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotdog Page</title>
-</head>
-<body>
-    <h1>Joe's Hotdog Stand</h1>
-    <p id = "numdogs"> </p>
-    <p id = "numfries"></p>
-    <p id = "numdrinks"> </p>
-    <p id = "totalcost"> </p>
-    <p id = "discount"></p>
-    <p id = "new_cost"> </p>
-    <p id = "tax"> </p>
-    <p id = "final_total"></p>
-    <p> Have a great day! </p>
-    <script type="text/javascript">
-        function showMoney(total){
-            return Math.round(total * 100) / 100;
-        }
-        const hotdog_price = 4.99;
-        const frenchfry_price = 3.99;
-        const drink_price = 1.79;
-        var numdogs = parseInt(prompt("How many hot dogs do you want", "0")) || 0;
-        var numfries = parseInt(prompt("How many french fries do you want", "0")) || 0;
-        var numdrinks = parseInt(prompt("How many drinks do you want", "0")) || 0;
-        var totalcost = numdogs * hotdog_price + numfries * frenchfry_price + numdrinks * drink_price;
-        var discount = 0;
-        document.getElementById("numdogs").textContent = "The total cost of hotdogs is $" + showMoney(numdogs * hotdog_price) + " for " + numdogs;
-        document.getElementById("numfries").textContent = "The total cost of fries is $" + showMoney(numfries * frenchfry_price) + " for " + numfries;
-        document.getElementById("numdrinks").textContent = "The total cost of drinks is $" + showMoney(numdrinks * drink_price) + " for " + numdrinks;
-        document.getElementById("totalcost").textContent = "The total cost before any changes is $" + showMoney(totalcost);
-        if(totalcost >= 30){
-            discount = totalcost / 10;
-        }
-        document.getElementById("discount").textContent = "Total saved is $" + showMoney(discount);
-        var new_cost = totalcost-discount;
-        document.getElementById("new_cost").textContent = "New cost would be $" + showMoney(new_cost);
-        var tax = showMoney((totalcost - discount) * 0.065);
-        document.getElementById("tax").textContent = "The tax will be $" + tax;
-        var final_total = showMoney((totalcost - discount) + tax);
-        document.getElementById("final_total").textContent = "Your total will be $" + final_total;
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title> MBTA Green Line - Home </title>
+        <link rel = "stylesheet" href = "styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class = "brandLogo">
+                <img src = "midtermProj/MBTA.svg.png" alt="greenLineLogo" class = "logo">
+            </div>
+            <h1>Welcome to the homepage of the MBTA Green Line!</h1>
+        </header>    
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stations.html">Stations</a></li>
+                    <li><a href = "cost.html">Costs</a></li>
+                    <li><a href = "recentevents.html">Recent Events</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href = "contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        <main>
+            <section class = "overview">
+                <h2>
+                    The MBTA Green Line
+                </h2>
+                <p>
+                    The MBTA(Massachusetts Bay Transportation Authority) Green Line
+                    is the Boston area's inner rail system, connecting locations including 
+                    downtown Boston, Dorchester, Boston College, Medford, Malden, Cambridge, 
+                    Revere... It offers both underground and above-ground travels.
+                </p>
+            </section>
+
+            <section class="map">
+                <p>Explore the Green Line by
+                    <a href = "https://www.mbta.com/schedules/subway" target = "_blank" class = "cta-button"> visiting the MBTA official website</a>
+                </p>
+                
+                
+            </section>
+
+            
+            
+
+            <secion class = "branches">
+                <h2> The Green Line Branches</h2>
+                <div class = "glbranches">
+                    <img src = "midtermProj/routes.png" alt="greenLineBranches" class = "branches">
+                </div>
+                <ul>
+                    <li><p>B Branch: Government Center --- Boston College</p></li>
+                    <li><p>C Branch: Government Center --- Cleveland Circle</p></li>
+                    <li><p>D Branch: Union Square --- Riverside</p></li>
+                    <li><p>E Branch: Medford/Tufts --- Heath Street</p></li>
+                </ul>
+            </secion>
+
+            <section class="fare-calculator">
+                <h2> Calculate Your Green Line Fare</h2>
+                <label for = "riderType">Choose Your Rider Type</label>
+                <select id = "riderType">
+                    <option value = "Regular"> Regular CharlieCard</option>
+                    <option value = "Senior">Senior</option>
+                    <option value = "Student">Student Rate</option>
+                    <option value = "Reduced">Reduced Fare</option>
+
+                </select>
+                <button class = "fareButton" onclick = "calculateFare()">Get Your Fare Estimate</button>
+                <p id = "fareResult"></p>
+            </section>
+            <script>
+                function calculateFare(){
+                    const farePrices = {
+                        "Regular": 2.40,
+                        "Senior": 1.10,
+                        "Student": 1.10,
+                        "Reduced": 1.10
+                    };
+
+                    let riderType = document.getElementById("riderType").value;
+                    let fare = farePrices[riderType];
+
+                    document.getElementById("fareResult").innerText = `Fare for ${riderType}: $${fare.toFixed(2)}`;
+                }
+            </script>
+            <section class = "service">
+                <h2>Services of MBTA Green Line</h2>
+                <p>
+                    The MBTA Green Line runs 7 days a week, with late-night services during 
+                    weekends. Accessibility services, including wheelchairs and live train 
+                    tracking, could be found on the <a href = "https://www.mbta.com/mbta-endorsed-apps" target = "_blank" class = "app">MBTA Mobile App</a>.
+                </p>
+            </section>
+            <!-- <section class = "imageContainer">
+                <img src = "/Users/newuser/Downloads/cs20/midtermProj/rfr-mbta-greenline-03.jpg" alt = "greenLineBackground" class = "backgroundImg">
+
+            </section> -->
+        </main>
+        <footer>
+            <h3>&copy 2025 MBTA Green Line | All Rights Reserved</h3>
+        </footer>
         
-    </script>
-</body>
+    </body>
 </html>
