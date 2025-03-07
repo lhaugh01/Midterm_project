@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title> MBTA Green Line - Home </title>
+        <link rel = "stylesheet" href = "styles.css">
+
+        <style>
+            textarea {
+                width: 80%;
+                height: 20%;
+                padding: 10px;
+                margin: 20px;
+                border: white;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <header>
+            <div class = "brandLogo">
+                <img src = "MBTA.svg.png" alt="greenLineLogo" class = "logo">
+            </div>
+            <h1>Contact Us</h1>
+        </header>    
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="stations.html">Stations</a></li>
+                    <li><a href = "cost.html">Costs</a></li>
+                    <li><a href = "recentevents.html">Recent Events</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href = "contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        <main>
+            <p style="font-size: 12px">Disclaimer: This site isn't affiliated with MBTA, and is created only for informative purposes.</p>
+            
+            <section class="feedback">
+                <h2>
+                    Feedback
+                </h2>
+
+                <p>
+                    Contact us about your experience with the MBTA Green Line at 111-111-1111 
+                    or leave a comment below!
+                </p>
+                <!-- feedback box and submit button -->
+                <textarea id="commentBox" placeholder="Tell us about your experience!"></textarea>
+                <button onclick="addComment()">Send Feedback</button>
+                <script>
+                    function addComment() {
+                        let commentBox = document.getElementById('commentBox');
+                        if (commentBox.value.trim() != "") {
+                            //submitting a comment currently just clears the comment box
+                            commentBox.value = "";
+                        }
+                    }
+                </script>
+            </section>
+
+            <section class = "service">
+                <h2>Services of MBTA Green Line</h2>
+                <p>
+                    The MBTA Green Line runs 7 days a week, with late-night services during 
+                    weekends. Accessibility services, including wheelchairs and live train 
+                    tracking, could be found on the <a href = "https://www.mbta.com/mbta-endorsed-apps" target = "_blank" class = "app">MBTA Mobile App</a>.
+                </p>
+            </section>
+        </main>
+        <footer>
+            <h3>&copy 2025 MBTA Green Line | All Rights Reserved</h3>
+        </footer>
+        
+    </body>
+</html>
