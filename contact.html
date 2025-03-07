@@ -16,6 +16,19 @@
                 border-radius: 5px;
                 font-size: 16px;
             }
+
+            .sendButton {
+                display: block;
+                margin: 0 auto;
+                background-color: #228B22;
+                color:white;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+
+            p{
+                text-align: center;
+            }
         </style>
 
     </head>
@@ -52,7 +65,7 @@
                 </p>
                 <!-- feedback box and submit button -->
                 <textarea id="commentBox" placeholder="Tell us about your experience!"></textarea>
-                <button onclick="addComment()">Send Feedback</button>
+                <button class="sendButton" onclick="addComment()">Send Feedback</button>
                 <script>
                     function addComment() {
                         let commentBox = document.getElementById('commentBox');
