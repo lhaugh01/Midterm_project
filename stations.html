@@ -1,83 +1,132 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <body style="background-image: url('https://raw.githubusercontent.com/lhaugh01/Midterm_project/main/s3___bgmp-arc_arc-feeds_generic-photos_to-arc_ryannewT4met-623b3fd95dbb1-768x432.webp');">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-        <title> MBTA Green Line - Home </title>
-        <link rel = "stylesheet" href = "styles.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTA Green Line - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-    <body>
-        <header>
-            <div class = "brandLogo">
-                <img src = "MBTA.svg.png" alt="greenLineLogo" class = "logo">
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .column h2 {
+            text-align: center;
+        }
+
+        .column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .column li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://raw.githubusercontent.com/lhaugh01/Midterm_project/main/s3___bgmp-arc_arc-feeds_generic-photos_to-arc_ryannewT4met-623b3fd95dbb1-768x432.webp');">
+    <header>
+        <div class="brandLogo">
+            <img src="MBTA.svg.png" alt="greenLineLogo" class="logo">
+        </div>
+        <h1>Learn about the MBTA Green Line Stations</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stations.html">Stations</a></li>
+            <li><a href="cost.html">Costs</a></li>
+            <li><a href="recentevents.html">Recent Events</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p style="font-size: 12px">Disclaimer: This site isn't affiliated with MBTA, and is created only for informative purposes.</p>
+        <section class="overview">
+            <h2>Green Line Stations</h2>
+            <p>
+                The MBTA Green Line consists of multiple branches—B, C, D, and E—serving key destinations across the Boston area.
+                The line blends underground and street-level travel, offering a vital link across the city.
+            </p>
+        </section>
+
+        <section class="map">
+            <p style="text-align: center;">Learn about each station's schedules through the official  
+                <a href="https://www.mbta.com/schedules/subway" target="_blank" class="cta-button">Green Line Website</a>
+            </p>
+        </section>
+
+        <section class="branches">
+            <h2>MBTA and Green Line Map</h2>
+            <div class="glbranches">
+                <img src="https://github.com/lhaugh01/Midterm_project/raw/main/GreenLine-BostonUniversity.webp" alt="greenLineBranches" class="branches">
             </div>
-            <h1>Learn about the MBTA Green Line Stations</h1>
-        </header>    
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="stations.html">Stations</a></li>
-                    <li><a href = "cost.html">Costs</a></li>
-                    <li><a href = "recentevents.html">Recent Events</a></li>
-                    <li><a href="aboutus.html">About Us</a></li>
-                    <li><a href = "contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
+            <ul>
+                <li><p>B Branch: Government Center --- Boston College</p></li>
+                <li><p>C Branch: Government Center --- Cleveland Circle</p></li>
+                <li><p>D Branch: Union Square --- Riverside</p></li>
+                <li><p>E Branch: Medford/Tufts --- Heath Street</p></li>
+            </ul>
+        </section>
 
-        <main>
-            <p style="font-size: 12px">Disclaimer: This site isn't affiliated with MBTA, and is created only for informative purposes.</p>
-            <section class = "overview">
-                
-                <h2>
-                    Green Line Stations
-                </h2>
-                <p>
-                    The MBTA Green Line consists of multiple branches—B, C, D, and E—serving key destinations across the Boston area.
-                    The line blends underground and street-level travel, offering a vital link across the city.
-                </p>
-            </section>
-
-            <section class="map">
-                <p style="text-align: center;">Learn about each station's schedules through the official  
-                    <a href = "https://www.mbta.com/schedules/subway" target = "_blank" class = "cta-button"> Green Line Website</a>
-                </p>
-                
-                
-            </section>
-
-            
-            
-
-            <secion class = "branches">
-                <h2> MBTA and Green Line Map</h2>
-                <div class = "glbranches">
-                    <img src = "https://github.com/lhaugh01/Midterm_project/raw/main/GreenLine-BostonUniversity.webp" alt="greenLineBranches" class = "branches">
+        <!-- New section for displaying stations on each branch -->
+        <section class="stations">
+            <div class="container">
+                <div class="column">
+                    <h2>Branch 1</h2>
+                    <ul>
+                        <li>Station 1</li>
+                        <li>Station 2</li>
+                        <li>Station 3</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li><p>B Branch: Government Center --- Boston College</p></li>
-                    <li><p>C Branch: Government Center --- Cleveland Circle</p></li>
-                    <li><p>D Branch: Union Square --- Riverside</p></li>
-                    <li><p>E Branch: Medford/Tufts --- Heath Street</p></li>
-                </ul>
-            </secion>
-            <section class = "service">
-                <h2>Services of MBTA Green Line</h2>
-                <p>
-                    The MBTA Green Line runs 7 days a week, with late-night services during 
-                    weekends. Accessibility services, including wheelchairs and live train 
-                    tracking, could be found on the <a href = "https://www.mbta.com/mbta-endorsed-apps" target = "_blank" class = "app">MBTA Mobile App</a>.
-                </p>
-            </section>
-            <!-- <section class = "imageContainer">
-                <img src = "https://raw.githubusercontent.com/lhaugh01/Midterm_project/main/s3___bgmp-arc_arc-feeds_generic-photos_to-arc_ryannewT4met-623b3fd95dbb1-768x432.webp" alt = "greenLineBackground" class = "backgroundImg">
+                <div class="column">
+                    <h2>Branch 2</h2>
+                    <ul>
+                        <li>Station A</li>
+                        <li>Station B</li>
+                        <li>Station C</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2>Branch 3</h2>
+                    <ul>
+                        <li>Station X</li>
+                        <li>Station Y</li>
+                        <li>Station Z</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            </section> -->
-        </main>
-        <footer>
-            <h3>&copy 2025 MBTA Green Line | All Rights Reserved</h3>
-        </footer>
-        
-    </body>
+        <section class="service">
+            <h2>Services of MBTA Green Line</h2>
+            <p>
+                The MBTA Green Line runs 7 days a week, with late-night services during 
+                weekends. Accessibility services, including wheelchairs and live train 
+                tracking, could be found on the <a href="https://www.mbta.com/mbta-endorsed-apps" target="_blank" class="app">MBTA Mobile App</a>.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <h3>&copy 2025 MBTA Green Line | All Rights Reserved</h3>
+    </footer>
+</body>
 </html>
