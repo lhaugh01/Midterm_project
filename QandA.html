@@ -56,6 +56,7 @@
             const faqContainer = document.getElementById('faq-container');
             for (let question in FAQs) {
                 const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
                 const faqQuestion = document.createElement('h3');
                 const faqAnswer = document.createElement('p');
 
