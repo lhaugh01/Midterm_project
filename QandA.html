@@ -7,12 +7,15 @@
     <title>MBTA Green Line - Home</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .faq-item p {
-            display: none;
-        }
-        .faq-item:hover p {
-            display: block;
-        }
+    .faq-item p {
+        display: none;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+    }
+    .faq-item:hover p {
+        display: block;
+        opacity: 1;
+    }
     </style>
     </head>
     <body>
