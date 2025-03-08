@@ -315,59 +315,6 @@
         </footer>
         
         <script>
-            function calculateDetailedFare() {
-                const farePrices = {
-                    "Regular": {
-                        "OneWay": 2.40,
-                        "RoundTrip": 4.80,
-                        "Weekly": 24.00,
-                        "Monthly": 90.00
-                    },
-                    "Senior": {
-                        "OneWay": 1.10,
-                        "RoundTrip": 2.20,
-                        "Weekly": 11.00,
-                        "Monthly": 30.00
-                    },
-                    "Student": {
-                        "OneWay": 1.10,
-                        "RoundTrip": 2.20,
-                        "Weekly": 11.00,
-                        "Monthly": 30.00
-                    },
-                    "Reduced": {
-                        "OneWay": 1.10,
-                        "RoundTrip": 2.20,
-                        "Weekly": 11.00,
-                        "Monthly": 30.00
-                    }
-                };
-
-                let riderType = document.getElementById("riderType").value;
-                let tripType = document.getElementById("tripType").value;
-                let fare = farePrices[riderType][tripType];
-                
-                let resultElement = document.getElementById("fareResult");
-                resultElement.innerHTML = `<strong>Fare for ${riderType} (${tripType}):</strong> $${fare.toFixed(2)}`;
-                
-            }
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                const sections = document.querySelectorAll('.fare-section');
-                sections.forEach((section, index) => {
-                    section.style.opacity = 0;
-                    section.style.transform = 'translateY(20px)';
-                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    
-                    setTimeout(() => {
-                        section.style.opacity = 1;
-                        section.style.transform = 'translateY(0)';
-                    }, index * 200);
-                });
-            });
-
-
-
             $(document).ready(function() {
             $.get("ticket.json", function(data) {
                 displayPasses(data.passes);
