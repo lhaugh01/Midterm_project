@@ -1,0 +1,55 @@
+{
+    "passes": [
+      {
+        "name": "1-Day Pass",
+        "price": "$11.00",
+        "description": "Unlimited travel for 24 hours",
+        "validOn": {
+          "charlieCardAndTicket": [
+            "Subway",
+            "Local Bus", 
+            "Silver Line"
+          ],
+          "charlieTicketOnly": [
+            "Commuter Rail Zone 1A",
+            "Charlestown Ferry",
+            "East Boston Ferry (seasonal)"
+          ]
+        }
+      },
+      {
+        "name": "7-Day Pass",
+        "price": "$22.50",
+        "description": "Unlimited travel for 7 days",
+        "validOn": {
+          "charlieCardAndTicket": [
+            "Subway",
+            "Local Bus",
+            "Silver Line"
+          ],
+          "charlieTicketOnly": [
+            "Commuter Rail Zone 1A",
+            "Charlestown Ferry",
+            "East Boston Ferry (seasonal)"
+          ]
+        }
+      },
+      {
+        "name": "Monthly LinkPass",
+        "price": "$90.00",
+        "description": "Unlimited travel for the remainder of the month",
+        "validOn": {
+          "charlieCardAndTicket": [
+            "Subway",
+            "Local Bus",
+            "Silver Line"
+          ],
+          "charlieTicketOnly": [
+            "Commuter Rail Zone 1A",
+            "Charlestown Ferry",
+            "East Boston Ferry (seasonal)"
+          ]
+        }
+      }
+    ]
+  }

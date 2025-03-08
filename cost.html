@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="MBTA, Green Line, Boston, fares, CharlieCard, subway costs, public transportation, transit fares">
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+        crossorigin="anonymous"></script>
+        <title>MBTA Green Line - Costs</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body{
+                background-image: url(rfr-mbta-greenline-02.jpg);
+            }
+            
+            .fare-table {
+                width: 80%;
+                margin: 20px auto;
+                border-collapse: collapse;
+                background-color: black;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            
+            .fare-table th, .fare-table td {
+                padding: 15px;
+                text-align: center;
+                border: 1px solid gray;
+            }
+            
+            .fare-table th {
+                background-color: green;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            
+            .fare-price {
+                font-size: 28px;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 10px;
+            }
+            
+            .fare-desc {
+                font-size: 16px;
+                color: white;
+                line-height: 1.4;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            
+            .subway-icon {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            .fare-section {
+                width: 80%;
+                margin: 30px auto;
+                text-align: left;
+                background-color: black;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            
+            .fare-section h2 {
+                font-size: 28px;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            
+            .fare-section p {
+                margin-bottom: 15px;
+                line-height: 1.6;
+                text-align: left;
+            }
+            
+            .fare-note {
+                background-color: gray;
+                padding: 15px;
+                border-left: 4px solid yellow;
+                margin: 20px 0;
+            }
+            
+            .fare-note strong {
+                font-weight: bold;
+                color: yellow;
+            }
+            
+            .learn-more {
+                display: inline-block;
+                color: blue;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+            
+            .learn-more:hover {
+                text-decoration: underline;
+            }
+            
+            @media screen and (max-width: 768px) {
+                .fare-table {
+                    width: 95%;
+                }
+                
+                .fare-section {
+                    width: 95%;
+                    padding: 15px;
+                }
+                
+                .fare-price {
+                    font-size: 24px;
+                }
+                
+                .fare-desc {
+                    font-size: 14px;
+                }
+            }
+
+                .passes-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: center;
+                    margin-top: 20px;
+                }
+                
+                .pass-card {
+                    background-color: black;
+                    border-radius: 10px;
+                    padding: 20px;
+                    width: 100%;
+                    max-width: 350px;
+                    border: 1px solid gray;
+                }
+                
+                .pass-card:hover {
+                    transform: translateY(-5px);
+                }
+                
+                .pass-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 15px;
+                    border-bottom: 1px solid gray;
+                    padding-bottom: 10px;
+                }
+                
+                .pass-header h3 {
+                    margin: 0;
+                    font-size: 22px;
+                    color: white;
+                }
+                
+                .pass-price {
+                    font-size: 26px;
+                    font-weight: bold;
+                    color: lightgreen;
+                }
+                
+                .pass-description {
+                    margin-bottom: 15px;
+                    font-style: italic;
+                    color: white;
+                }
+                
+                .pass-validity p {
+                    margin-top: 15px;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                    color: white;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                
+                .pass-validity ul {
+                    list-style-type: none;
+                    padding-left: 0;
+                    margin-bottom: 15px;
+                }
+                
+                .pass-validity li {
+                    margin: 5px 0;
+                    color: white;
+                    font-family: 'Courier New', Courier, monospace;
+                }
+                
+                .pass-icon {
+                    display: inline-block;
+                    width: 24px;
+                    text-align: center;
+                    margin-right: 8px;
+                }
+                
+                @media screen and (max-width: 768px) {
+                    .passes-container {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    
+                    .pass-card {
+                        max-width: 100%;
+                    }
+                        }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="brandLogo">
+                <a href="index.html">
+                    <img src="MBTA.svg.png" alt="greenLineLogo" class="logo">
+                </a>
+            </div>
+            <h1>MBTA Green Line Fares & Costs</h1>
+        </header>    
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stations.html">Stations</a></li>
+                <li><a href="cost.html">Costs</a></li>
+                <li><a href="recentevents.html">Recent Events</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <p style="font-size: 12px">Disclaimer: This site isn't affiliated with MBTA, and is created only for informative purposes.</p>
+            
+
+            <section class="fare-section">
+                <h2>One-Way Fares</h2>
+                
+                <table class="fare-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <img src="subway-icon.png" alt="Subway Icon" class="subway-icon" onerror="this.src='MBTA.svg.png'; this.style.width='40px';">
+                                Subway One-Way
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fare-price">$2.40</div>
+                                <div class="fare-desc">with CharlieCard, CharlieTicket,<br>contactless payment, or cash</div>
+                            </td>
+                            <td>
+                                <div class="fare-price">$1.10</div>
+                                <div class="fare-desc">with reduced fare card</div>
+                                <a href="https://www.mbta.com/fares/reduced" class="learn-more">Learn more about reduced fares</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+
+            <section class="fare-section">
+                <h2>Monthly Passes</h2>
+                <p>
+                    Monthly passes provide unlimited travel on specific services for a calendar month. 
+                    Subway passes include unlimited bus rides as well.
+                </p>
+                
+                <table class="fare-table">
+                    <thead>
+                        <tr>
+                            <th>Pass Type</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fare-desc">LinkPass (Subway & Bus)</div>
+                            </td>
+                            <td>
+                                <div class="fare-price">$90.00</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="fare-desc">Reduced LinkPass (Senior/Student)</div>
+                            </td>
+                            <td>
+                                <div class="fare-price">$30.00</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="fare-section" id="passes-section">
+                <h2>Travel Passes</h2>
+                <p>
+                    Choose from various passes for unlimited travel during specific time periods.
+                    All passes are available on CharlieCard or CharlieTicket.
+                </p>
+                
+                <div id="passes-container" class="passes-container">
+                    <p>Loading passes information...</p>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer>
+            <h3>&copy; 2025 MBTA Green Line | All Rights Reserved</h3>
+        </footer>
+        
+        <script>
+            function calculateDetailedFare() {
+                const farePrices = {
+                    "Regular": {
+                        "OneWay": 2.40,
+                        "RoundTrip": 4.80,
+                        "Weekly": 24.00,
+                        "Monthly": 90.00
+                    },
+                    "Senior": {
+                        "OneWay": 1.10,
+                        "RoundTrip": 2.20,
+                        "Weekly": 11.00,
+                        "Monthly": 30.00
+                    },
+                    "Student": {
+                        "OneWay": 1.10,
+                        "RoundTrip": 2.20,
+                        "Weekly": 11.00,
+                        "Monthly": 30.00
+                    },
+                    "Reduced": {
+                        "OneWay": 1.10,
+                        "RoundTrip": 2.20,
+                        "Weekly": 11.00,
+                        "Monthly": 30.00
+                    }
+                };
+
+                let riderType = document.getElementById("riderType").value;
+                let tripType = document.getElementById("tripType").value;
+                let fare = farePrices[riderType][tripType];
+                
+                let resultElement = document.getElementById("fareResult");
+                resultElement.innerHTML = `<strong>Fare for ${riderType} (${tripType}):</strong> $${fare.toFixed(2)}`;
+                
+            }
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                const sections = document.querySelectorAll('.fare-section');
+                sections.forEach((section, index) => {
+                    section.style.opacity = 0;
+                    section.style.transform = 'translateY(20px)';
+                    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    setTimeout(() => {
+                        section.style.opacity = 1;
+                        section.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            });
+
+
+
+            $(document).ready(function() {
+            $.get("ticket.json", function(data) {
+                displayPasses(data.passes);
+            }).fail(function() {
+                $('#passes-container').html('<p style="color: white;">Failed to load passes information. Please try again later.</p>');
+            });
+        });
+        
+        function displayPasses(passes) {
+            var htmlContent = '';
+            
+            $.each(passes, function(index, pass) {
+                htmlContent += '<div class="pass-card">';
+                htmlContent += '<div class="pass-header">';
+                htmlContent += '<h3>' + pass.name + '</h3>';
+                htmlContent += '<div class="pass-price">' + pass.price + '</div>';
+                htmlContent += '</div>';
+                htmlContent += '<div class="pass-description">' + pass.description + '</div>';
+                
+                htmlContent += '<div class="pass-validity">';
+                htmlContent += '<p>CharlieCard and CharlieTicket valid on:</p>';
+                htmlContent += '<ul>';
+                
+                $.each(pass.validOn.charlieCardAndTicket, function(i, item) {
+                    htmlContent += '<li>' + item + '</li>';
+                });
+                
+                htmlContent += '</ul>';
+                htmlContent += '<p>CharlieTicket also valid on:</p>';
+                htmlContent += '<ul>';
+                
+                $.each(pass.validOn.charlieTicketOnly, function(i, item) {
+                    htmlContent += '<li>' + item + '</li>';
+                });
+                
+                htmlContent += '</ul>';
+                htmlContent += '</div>';
+                htmlContent += '</div>';
+            });
+            
+            $('#passes-container').html(htmlContent);
+        }
+
+
+        </script>
+    </body>
+</html>
