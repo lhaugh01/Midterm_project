@@ -1,71 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body style="background-image: url('https://raw.githubusercontent.com/lhaugh01/Midterm_project/main/rfr-mbta-greenline-02.jpg');">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MBTA Green Line - Home</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <div class="brandLogo">
-                <img src="MBTA.svg.png" alt="greenLineLogo" class="logo">
-            </div>
-            <h1>Frequently Asked Questions</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="stations.html">Stations</a></li>
-                <li><a href="cost.html">Costs</a></li>
-                <li><a href="recentevents.html">Recent Events</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        <main>
-            <p style="font-size: 12px">Disclaimer: This site isn't affiliated with MBTA, and is created only for informative purposes.</p>
-            <section class="overview">
-                <h2>Common Questions</h2>
-                <div id="faq-container"></div>
-            </section>
-            <section class="service">
-                <h2>Services of MBTA Green Line</h2>
-                <p>
-                    The MBTA Green Line runs 7 days a week, with late-night services during 
-                    weekends. Accessibility services, including wheelchairs and live train 
-                    tracking, could be found on the <a href="https://www.mbta.com/mbta-endorsed-apps" target="_blank" class="app">MBTA Mobile App</a>.
-                </p>
-            </section>
-        </main>
-        <footer>
-            <h3>&copy; 2025 MBTA Green Line | All Rights Reserved</h3>
-        </footer>
-        <script>
-            const FAQs = {
-                "Who uses the MBTA green line?": "Everyone uses the green line whether it is students exploring the city or everyday workers commuting there is all types of people",
-                "Can the green line get everywhere?": "No, the green line cannot get you everywhere but you can transfer from one line to another to get to any station all on a single fare.",
-                "How long does it take for a train to come?": "Normally trains take 1-10 minutes to arrive at your station and the time riding depends on the distance",
-                "What are the hours?": "Anytime between 5am to 1 am all weekdays and weekends.",
-                "How much does it cost?": "There is a cost breakdown on another page but $2.40 max for a trip.",
-                "Does the train allow pets?": "Yes the green line accepts pets as long as they are on leash and secure.",
-                "Are there any holidays?": "Yes the greenline does operate on holidays but with a changed schedule so check the official site for hours."
-            };
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTA Green Line - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .answer {
+            display: none;
+        }
+        .question:hover + .answer {
+            display: block;
+        }
+    </style>
+</head>
+<body style="background-image: url('https://raw.githubusercontent.com/lhaugh01/Midterm_project/main/rfr-mbta-greenline-02.jpg');">
+    <header>
+        <div class="brandLogo">
+            <img src="MBTA.svg.png" alt="greenLineLogo" class="logo">
+        </div>
+        <h1>Frequently Asked Questions</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stations.html">Stations</a></li>
+            <li><a href="cost.html">Costs</a></li>
+            <li><a href="recentevents.html">Recent Events</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p style="font-size: 12px">Disclaimer: This site isn't affiliated with MBTA, and is created only for informative purposes.</p>
+        <section class="overview">
+            <h2>Common Questions</h2>
+            <div id="faq-container"></div>
+        </section>
+        <section class="service">
+            <h2>Services of MBTA Green Line</h2>
+            <p>
+                The MBTA Green Line runs 7 days a week, with late-night services during 
+                weekends. Accessibility services, including wheelchairs and live train 
+                tracking, could be found on the <a href="https://www.mbta.com/mbta-endorsed-apps" target="_blank" class="app">MBTA Mobile App</a>.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <h3>&copy; 2025 MBTA Green Line | All Rights Reserved</h3>
+    </footer>
+    <script>
+        const FAQs = {
+            "Who uses the MBTA green line?": "Everyone uses the green line whether it is students exploring the city or everyday workers commuting there is all types of people",
+            "Can the green line get everywhere?": "No, the green line cannot get you everywhere but you can transfer from one line to another to get to any station all on a single fare.",
+            "How long does it take for a train to come?": "Normally trains take 1-10 minutes to arrive at your station and the time riding depends on the distance",
+            "What are the hours?": "Anytime between 5am to 1 am all weekdays and weekends.",
+            "How much does it cost?": "There is a cost breakdown on another page but $2.40 max for a trip.",
+            "Does the train allow pets?": "Yes the green line accepts pets as long as they are on leash and secure.",
+            "Are there any holidays?": "Yes the greenline does operate on holidays but with a changed schedule so check the official site for hours."
+        };
 
-            const faqContainer = document.getElementById('faq-container');
-            for (let question in FAQs) {
-                const faqItem = document.createElement('div');
-                const faqQuestion = document.createElement('h3');
-                const faqAnswer = document.createElement('p');
+        const faqContainer = document.getElementById('faq-container');
+        for (let question in FAQs) {
+            const faqItem = document.createElement('div');
+            const faqQuestion = document.createElement('h3');
+            const faqAnswer = document.createElement('p');
 
-                faqQuestion.textContent = question;
-                faqAnswer.textContent = FAQs[question];
+            faqQuestion.textContent = question;
+            faqAnswer.textContent = FAQs[question];
+            faqAnswer.classList.add('answer');
+            faqQuestion.classList.add('question');
 
-                faqItem.appendChild(faqQuestion);
-                faqItem.appendChild(faqAnswer);
-                faqContainer.appendChild(faqItem);
-            }
-        </script>
-    </body>
+            faqItem.appendChild(faqQuestion);
+            faqItem.appendChild(faqAnswer);
+            faqContainer.appendChild(faqItem);
+        }
+    </script>
+</body>
 </html>
