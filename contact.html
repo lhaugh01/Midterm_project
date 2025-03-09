@@ -64,14 +64,29 @@
                     or leave a comment below!
                 </p>
                 <!-- feedback box and submit button -->
-                <textarea id="commentBox" placeholder="Tell us about your experience!"></textarea>
+                <textarea id="username" placeholder="Pick a username for yourself!"></textarea>
+                <textarea id="email" placeholder="enter your email!"></textarea>
+                <textarea id="comment" placeholder="Tell us about your experience!"></textarea>
                 <button class="sendButton" onclick="addComment()">Send Feedback</button>
                 <script>
                     function addComment() {
-                        let commentBox = document.getElementById('commentBox');
-                        if (commentBox.value.trim() != "") {
-                            //submitting a comment currently just clears the comment box
-                            commentBox.value = "";
+                        //let comment = document.getElementById('comment');
+                        // form validation
+                        if (comment.value.trim() != "" && username.value.trim() != ""
+                         &&email.value.trim() != "" && email.value.includes("@")
+                            && email.value.includes(".")) 
+                        {
+                            /*submitting a comment currently just clears the form fields but
+                            would submit if there was an actual database*/
+                            comment.value = "";
+                            email.value = "";
+                            username.value = "";
+                            alert("feedback sent!");
+                        } else {
+                            alert("invalid information, feedback not sent.");
+                            comment.value = "";
+                            email.value = "";
+                            username.value = "";
                         }
                     }
                 </script>
