@@ -257,6 +257,24 @@ label{
     .overview{
         width: 90%;
         padding: 15px;
+        transition: none;
+        transform: none;;
+        font-size: 14px;
+    }
+
+    .overview:hover{
+        transform: none;
+        transition: none;
+    }
+
+    .overview p{
+        opacity: 1;
+        max-height: none;
+        transform: none;
+    }
+
+    .overview h2{
+        transform: none;
     }
 
     .branches{
@@ -289,25 +307,18 @@ label{
     }
 
     .train-info {
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        margin-top: 10px;
-        padding: 0 10px;
-        border-radius: 5px;
-        background-color: #f0f0f0;
-        transition: opacity 0.4s ease, max-height 0.4s ease, padding 0.4s ease;
+        font-size: 14px;
+        padding: 0 8px;
     }
-    
-    .hover-title {
-        cursor: pointer;
-    }
-    
+
     .hover-title:hover + .train-info,
     .train-info:hover {
-        opacity: 1;
-        max-height: 200px;
-        padding: 10px;
+        max-height: 300px;
+        padding: 8px;
+    }
+
+    .train-times ul li {
+        font-size: 14px;
     }
 }
 
@@ -360,9 +371,9 @@ label{
     .overview{
         width: 95%;
         padding: 12px;
-        transition: none;
+        font-size: 13px;
     }
-
+    
     .overview:hover{
         transform: none;
     }
@@ -395,16 +406,20 @@ label{
         padding: 5px;
         font-size: 12px;
     }
-
     .train-info {
-        font-size: 13px;
+        font-size: 12px;
         padding: 0 6px;
     }
 
     .hover-title:hover + .train-info,
     .train-info:hover {
-        max-height: 300px; /* Increased height for mobile view */
+        max-height: 350px;
         padding: 6px;
+    }
+
+    .train-times ul li {
+        font-size: 12px;
+        padding: 4px;
     }
 }
 
@@ -413,40 +428,34 @@ label{
     padding: 15px;
     margin-top: 20px;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;;
-}
-
-.train-times > h2{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.train-times ul {
-    list-style-type: none;
-    padding: 0;
+    font-weight: bold;
 }
 
 .train-times li {
     font-size: 20px;
     padding: 5px;
 }
-
-.train-info {
-    opacity: 0;
-    max-height:  0;
-    overflow: hidden;
-    margin-top: 10px;
-    padding: 0 10px;
-    border-radius: 5px;
-    transition: opacity 0.4s ease, max-height 0.4s ease;
+.train-times > h2 {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .hover-title {
     cursor: pointer;
 }
 
+.train-info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    transition: opacity 0.4s ease, max-height 0.4s ease, padding 0.4s ease;
+}
+
 .hover-title:hover + .train-info,
 .train-info:hover {
     opacity: 1;
-    max-height: 200px;
+    max-height: 250px;
     padding: 10px;
 }
