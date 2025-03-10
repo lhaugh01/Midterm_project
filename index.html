@@ -53,6 +53,62 @@
                 
             </section>
 
+            <section class="train-times">
+                <h2 class = "hover-title">Incoming Trains at Medford/Tufts</h2>
+                <div id="trainTimes" class = "train-info">Loading next train times...</div>
+            </section>
+            <script>
+                function getNextTrainTimes() {
+                    const apiUrl = "https://api-v3.mbta.com/predictions?filter[stop]=place-mdftf&filter[route]=Green-E&include=schedule";
+                    $.ajax({
+                        url: apiUrl,
+                        type:'GET',
+                        dataType: 'json',
+                        success: function(response) {
+                            displayTrainTimes(response);
+                        },
+                        error: function(error){
+                            console.error("Error fetching data:",error);
+                            $("#trainTimes").text("Unable to fetch train times.");
+                        }
+                    });
+                }   
+
+                function displayTrainTimes(data){
+                    let trainInfo = "";
+                    if(data.data.length === 0) {
+                        trainInfo = "No upcoming trains available.";
+                    }
+                    else{
+                        data.data.slice(0, 5).forEach(function(item){
+                            const arrivalTime = item.attributes.arrival_time 
+                            ? new Date(item.attributes.arrival_time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) 
+                            :null;
+                            const departureTime = item.attributes.departure_time 
+                            ? new Date(item.attributes.departure_time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) 
+                            : null;
+
+                            let infoLine = "<li>";
+                            if(arrivalTime){
+                                infoLine += `Nearest arrival: ${arrivalTime}`;
+                            }
+                            if (arrivalTime && departureTime){
+                                infoLine += " | ";
+                            }
+                            if(departureTime) {
+                                infoLine += `Nearest departure: ${departureTime}`;
+                            }
+                            infoLine += "</li>";
+                            trainInfo += infoLine;
+                        });
+                    }
+    $("#trainTimes").html(`<ul>${trainInfo}</ul>`);
+}
+setInterval(getNextTrainTimes, 30000);
+$(document).ready(function(){
+    getNextTrainTimes();
+});
+            </script>
             
             
 
@@ -62,10 +118,10 @@
                     <img src = "routes.png" alt="greenLineBranches" class = "branches">
                 </div>
                 <ul>
-                    <li><p>B Branch: Government Center --- Boston College</p></li>
-                    <li><p>C Branch: Government Center --- Cleveland Circle</p></li>
-                    <li><p>D Branch: Union Square --- Riverside</p></li>
-                    <li><p>E Branch: Medford/Tufts --- Heath Street</p></li>
+                    <li><p>B Branch: Government Center &#8652 Boston College</p></li>
+                    <li><p>C Branch: Government Center &#8652 Cleveland Circle</p></li>
+                    <li><p>D Branch: Union Square &#8652 Riverside</p></li>
+                    <li><p>E Branch: Medford/Tufts &#8652 Heath Street</p></li>
                 </ul>
             </secion>
 

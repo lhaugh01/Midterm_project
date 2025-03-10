@@ -287,6 +287,28 @@ label{
         padding: 8px;
         font-size: 14px;
     }
+
+    .train-info {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 10px;
+        padding: 0 10px;
+        border-radius: 5px;
+        background-color: #f0f0f0;
+        transition: opacity 0.4s ease, max-height 0.4s ease, padding 0.4s ease;
+    }
+    
+    .hover-title {
+        cursor: pointer;
+    }
+    
+    .hover-title:hover + .train-info,
+    .train-info:hover {
+        opacity: 1;
+        max-height: 200px;
+        padding: 10px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -373,4 +395,58 @@ label{
         padding: 5px;
         font-size: 12px;
     }
+
+    .train-info {
+        font-size: 13px;
+        padding: 0 6px;
+    }
+
+    .hover-title:hover + .train-info,
+    .train-info:hover {
+        max-height: 300px; /* Increased height for mobile view */
+        padding: 6px;
+    }
+}
+
+.train-times {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;;
+}
+
+.train-times > h2{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.train-times ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.train-times li {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.train-info {
+    opacity: 0;
+    max-height:  0;
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.hover-title {
+    cursor: pointer;
+}
+
+.hover-title:hover + .train-info,
+.train-info:hover {
+    opacity: 1;
+    max-height: 200px;
+    padding: 10px;
 }
