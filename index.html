@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <meta name="keywords" content="MBTA, Green Line, Boston, fares, CharlieCard, subway costs, public transportation, transit fares">
         <title> MBTA Green Line - Home </title>
         <link rel = "stylesheet" href = "styles.css">
         <link rel="icon" type="image/x-icon" href="MBTA.svg.png">
@@ -102,8 +103,8 @@
                             trainInfo += infoLine;
                         });
                     }
-    $("#trainTimes").html(`<ul>${trainInfo}</ul>`);
-}
+                    $("#trainTimes").html(`<ul>${trainInfo}</ul>`);
+                }
 setInterval(getNextTrainTimes, 30000);
 $(document).ready(function(){
     getNextTrainTimes();
